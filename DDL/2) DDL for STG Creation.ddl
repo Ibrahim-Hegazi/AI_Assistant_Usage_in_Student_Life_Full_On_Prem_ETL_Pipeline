@@ -22,29 +22,23 @@ EXEC('
     END;
 ');
 
--- 4. Truncate or Create the properly-typed Staging table
+-- 4. Drop and recreate the properly-typed Staging table
 EXEC('
     USE STG;
     IF OBJECT_ID(''DB.CleanedSessionData'', ''U'') IS NOT NULL
-    BEGIN
-        -- Table exists, clear the old data
-        TRUNCATE TABLE DB.CleanedSessionData;
-    END
-    ELSE
-    BEGIN
-        -- Table does not exist, create it with DWH datatypes
-        CREATE TABLE DB.CleanedSessionData (
-            SessionID INT,
-            StudentLevel NVARCHAR(50),
-            Discipline NVARCHAR(50),
-            SessionDate DATE,
-            SessionLength FLOAT,
-            TotalPrompts INT,
-            TaskType NVARCHAR(50),
-            AIAssistanceLevel INT,
-            FinalOutcome NVARCHAR(50),
-            UsedAgain BIT,
-            Satisfaction FLOAT
-        );
-    END;
+        DROP TABLE DB.CleanedSessionData;
+
+    CREATE TABLE DB.CleanedSessionData (
+        SessionID INT,
+        StudentLevel NVARCHAR(50),
+        Discipline NVARCHAR(50),
+        SessionDate DATE,
+        SessionLength FLOAT,
+        TotalPrompts INT,
+        TaskType NVARCHAR(50),
+        AIAssistanceLevel INT,
+        FinalOutcome NVARCHAR(50),
+        UsedAgain BIT,
+        Satisfaction FLOAT
+    );
 ');

@@ -1,0 +1,1265 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/30/2026 8:22:25 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="IBRAHIMHEGAZIVM"
+  DTS:CreatorName="IBRAHIMHEGAZIVM\noobh"
+  DTS:DTSID="{D0E8E34D-9A1A-43C2-B6B1-15CFA58491D2}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{02DA6676-A5A3-47E3-B091-2901FADB8FCC}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\STG Stage in the Data Cleaning Pipeline"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{401472B4-6788-4708-9E00-8053B471BB05}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="STG Stage in the Data Cleaning Pipeline">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\STG Stage in the Data Cleaning Pipeline\Creating STG One Big Table"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{E4CA4AD1-CDCC-4585-950A-01290A0DD388}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Creating STG One Big Table"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{62A18C2A-BAF1-4EFA-BF21-53BE5FA49281}"
+              SQLTask:SqlStmtSourceType="FileConnection"
+              SQLTask:SqlStatementSource="2) DDL for STG Creation.ddl" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{95FE92A8-1AA0-4341-BDB2-B1CDCFBA86E1}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Moving the raw data from the ODS database to the STG database"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Data Type Conversion to match the Data Types that are applied in the STG One Big Table"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Inputs[Data Conversion Input].Columns[SessionID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="SessionID"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[SessionID]" />
+                        <inputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Inputs[Data Conversion Input].Columns[StudentLevel]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="StudentLevel"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[StudentLevel]" />
+                        <inputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Inputs[Data Conversion Input].Columns[Discipline]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="Discipline"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[Discipline]" />
+                        <inputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Inputs[Data Conversion Input].Columns[SessionDate]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="SessionDate"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[SessionDate]" />
+                        <inputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Inputs[Data Conversion Input].Columns[SessionLength]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="SessionLength"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[SessionLength]" />
+                        <inputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Inputs[Data Conversion Input].Columns[TotalPrompts]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="TotalPrompts"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[TotalPrompts]" />
+                        <inputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Inputs[Data Conversion Input].Columns[TaskType]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="TaskType"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[TaskType]" />
+                        <inputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Inputs[Data Conversion Input].Columns[AI_Assistance]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="AI_Assistance"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[AI_Assistance]" />
+                        <inputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Inputs[Data Conversion Input].Columns[FinalOutcome]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="FinalOutcome"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[FinalOutcome]" />
+                        <inputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Inputs[Data Conversion Input].Columns[UsedAgain]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="UsedAgain"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[UsedAgain]" />
+                        <inputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Inputs[Data Conversion Input].Columns[Satisfaction]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="Satisfaction"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[Satisfaction]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Outputs[Data Conversion Output].Columns[SessionID Converted]"
+                          dataType="ui8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Outputs[Data Conversion Output].Columns[SessionID Converted]"
+                          name="SessionID Converted"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[SessionID]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Outputs[Data Conversion Output].Columns[StudentLevel Converted]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Outputs[Data Conversion Output].Columns[StudentLevel Converted]"
+                          name="StudentLevel Converted"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[StudentLevel]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Outputs[Data Conversion Output].Columns[Discipline Converted]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Outputs[Data Conversion Output].Columns[Discipline Converted]"
+                          name="Discipline Converted"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[Discipline]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Outputs[Data Conversion Output].Columns[SessionDate Converted]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Outputs[Data Conversion Output].Columns[SessionDate Converted]"
+                          name="SessionDate Converted"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[SessionDate]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Outputs[Data Conversion Output].Columns[SessionLength Converted]"
+                          dataType="r4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Outputs[Data Conversion Output].Columns[SessionLength Converted]"
+                          name="SessionLength Converted"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[SessionLength]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Outputs[Data Conversion Output].Columns[TotalPrompts Converted]"
+                          dataType="ui8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Outputs[Data Conversion Output].Columns[TotalPrompts Converted]"
+                          name="TotalPrompts Converted"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[TotalPrompts]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Outputs[Data Conversion Output].Columns[TaskType Converted]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Outputs[Data Conversion Output].Columns[TaskType Converted]"
+                          name="TaskType Converted"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[TaskType]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Outputs[Data Conversion Output].Columns[AIAssistanceLevel Converted]"
+                          dataType="ui8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Outputs[Data Conversion Output].Columns[AIAssistanceLevel Converted]"
+                          name="AIAssistanceLevel Converted"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[AI_Assistance]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Outputs[Data Conversion Output].Columns[FinalOutcome Converted]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Outputs[Data Conversion Output].Columns[FinalOutcome Converted]"
+                          name="FinalOutcome Converted"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[FinalOutcome]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Outputs[Data Conversion Output].Columns[UsedAgain Converted]"
+                          dataType="bool"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Outputs[Data Conversion Output].Columns[UsedAgain Converted]"
+                          name="UsedAgain Converted"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[UsedAgain]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Outputs[Data Conversion Output].Columns[Satisfaction Converted]"
+                          dataType="r4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Outputs[Data Conversion Output].Columns[Satisfaction Converted]"
+                          name="Satisfaction Converted"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[Satisfaction]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="Extracting Raw Data from ODS"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[DB].[RawSessionData]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Connections[OleDbConnection]"
+                      connectionManagerID="{66E81CF2-D196-4C12-B173-569313E87FE1}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[localhost.ODS]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[SessionID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].ExternalColumns[SessionID]"
+                          length="255"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[SessionID]"
+                          name="SessionID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[StudentLevel]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].ExternalColumns[StudentLevel]"
+                          length="255"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[StudentLevel]"
+                          name="StudentLevel"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[Discipline]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].ExternalColumns[Discipline]"
+                          length="255"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[Discipline]"
+                          name="Discipline"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[SessionDate]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].ExternalColumns[SessionDate]"
+                          length="255"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[SessionDate]"
+                          name="SessionDate"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[SessionLength]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].ExternalColumns[SessionLength]"
+                          length="255"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[SessionLength]"
+                          name="SessionLength"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[TotalPrompts]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].ExternalColumns[TotalPrompts]"
+                          length="255"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[TotalPrompts]"
+                          name="TotalPrompts"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[TaskType]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].ExternalColumns[TaskType]"
+                          length="255"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[TaskType]"
+                          name="TaskType"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[AI_Assistance]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].ExternalColumns[AI_Assistance]"
+                          length="255"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[AI_Assistance]"
+                          name="AI_Assistance"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[FinalOutcome]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].ExternalColumns[FinalOutcome]"
+                          length="255"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[FinalOutcome]"
+                          name="FinalOutcome"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[UsedAgain]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].ExternalColumns[UsedAgain]"
+                          length="255"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[UsedAgain]"
+                          name="UsedAgain"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[Satisfaction]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].ExternalColumns[Satisfaction]"
+                          length="255"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[Satisfaction]"
+                          name="Satisfaction"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].ExternalColumns[SessionID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="SessionID" />
+                        <externalMetadataColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].ExternalColumns[StudentLevel]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="StudentLevel" />
+                        <externalMetadataColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].ExternalColumns[Discipline]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="Discipline" />
+                        <externalMetadataColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].ExternalColumns[SessionDate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="SessionDate" />
+                        <externalMetadataColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].ExternalColumns[SessionLength]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="SessionLength" />
+                        <externalMetadataColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].ExternalColumns[TotalPrompts]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="TotalPrompts" />
+                        <externalMetadataColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].ExternalColumns[TaskType]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="TaskType" />
+                        <externalMetadataColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].ExternalColumns[AI_Assistance]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="AI_Assistance" />
+                        <externalMetadataColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].ExternalColumns[FinalOutcome]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="FinalOutcome" />
+                        <externalMetadataColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].ExternalColumns[UsedAgain]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="UsedAgain" />
+                        <externalMetadataColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].ExternalColumns[Satisfaction]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="Satisfaction" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Error Output].Columns[SessionID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Error Output].Columns[SessionID]"
+                          name="SessionID" />
+                        <outputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Error Output].Columns[StudentLevel]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Error Output].Columns[StudentLevel]"
+                          name="StudentLevel" />
+                        <outputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Error Output].Columns[Discipline]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Error Output].Columns[Discipline]"
+                          name="Discipline" />
+                        <outputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Error Output].Columns[SessionDate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Error Output].Columns[SessionDate]"
+                          name="SessionDate" />
+                        <outputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Error Output].Columns[SessionLength]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Error Output].Columns[SessionLength]"
+                          name="SessionLength" />
+                        <outputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Error Output].Columns[TotalPrompts]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Error Output].Columns[TotalPrompts]"
+                          name="TotalPrompts" />
+                        <outputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Error Output].Columns[TaskType]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Error Output].Columns[TaskType]"
+                          name="TaskType" />
+                        <outputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Error Output].Columns[AI_Assistance]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Error Output].Columns[AI_Assistance]"
+                          name="AI_Assistance" />
+                        <outputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Error Output].Columns[FinalOutcome]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Error Output].Columns[FinalOutcome]"
+                          name="FinalOutcome" />
+                        <outputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Error Output].Columns[UsedAgain]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Error Output].Columns[UsedAgain]"
+                          name="UsedAgain" />
+                        <outputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Error Output].Columns[Satisfaction]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Error Output].Columns[Satisfaction]"
+                          name="Satisfaction" />
+                        <outputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Moving cleaned data from ODS database to STG database"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[DB].[CleanedSessionData]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database.Connections[OleDbConnection]"
+                      connectionManagerID="{8F77A3C9-04A2-4A90-B351-052F2A15D38E}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[localhost.STG]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database.Inputs[OLE DB Destination Input].Columns[SessionID Converted]"
+                          cachedDataType="ui8"
+                          cachedName="SessionID Converted"
+                          externalMetadataColumnId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database.Inputs[OLE DB Destination Input].ExternalColumns[SessionID]"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Outputs[Data Conversion Output].Columns[SessionID Converted]" />
+                        <inputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database.Inputs[OLE DB Destination Input].Columns[StudentLevel Converted]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="StudentLevel Converted"
+                          externalMetadataColumnId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database.Inputs[OLE DB Destination Input].ExternalColumns[StudentLevel]"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Outputs[Data Conversion Output].Columns[StudentLevel Converted]" />
+                        <inputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database.Inputs[OLE DB Destination Input].Columns[Discipline Converted]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Discipline Converted"
+                          externalMetadataColumnId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database.Inputs[OLE DB Destination Input].ExternalColumns[Discipline]"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Outputs[Data Conversion Output].Columns[Discipline Converted]" />
+                        <inputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database.Inputs[OLE DB Destination Input].Columns[SessionDate Converted]"
+                          cachedDataType="dbDate"
+                          cachedName="SessionDate Converted"
+                          externalMetadataColumnId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database.Inputs[OLE DB Destination Input].ExternalColumns[SessionDate]"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Outputs[Data Conversion Output].Columns[SessionDate Converted]" />
+                        <inputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database.Inputs[OLE DB Destination Input].Columns[SessionLength Converted]"
+                          cachedDataType="r4"
+                          cachedName="SessionLength Converted"
+                          externalMetadataColumnId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database.Inputs[OLE DB Destination Input].ExternalColumns[SessionLength]"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Outputs[Data Conversion Output].Columns[SessionLength Converted]" />
+                        <inputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database.Inputs[OLE DB Destination Input].Columns[TotalPrompts Converted]"
+                          cachedDataType="ui8"
+                          cachedName="TotalPrompts Converted"
+                          externalMetadataColumnId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database.Inputs[OLE DB Destination Input].ExternalColumns[TotalPrompts]"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Outputs[Data Conversion Output].Columns[TotalPrompts Converted]" />
+                        <inputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database.Inputs[OLE DB Destination Input].Columns[TaskType Converted]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="TaskType Converted"
+                          externalMetadataColumnId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database.Inputs[OLE DB Destination Input].ExternalColumns[TaskType]"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Outputs[Data Conversion Output].Columns[TaskType Converted]" />
+                        <inputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database.Inputs[OLE DB Destination Input].Columns[FinalOutcome Converted]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="FinalOutcome Converted"
+                          externalMetadataColumnId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database.Inputs[OLE DB Destination Input].ExternalColumns[FinalOutcome]"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Outputs[Data Conversion Output].Columns[FinalOutcome Converted]" />
+                        <inputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database.Inputs[OLE DB Destination Input].Columns[UsedAgain Converted]"
+                          cachedDataType="bool"
+                          cachedName="UsedAgain Converted"
+                          externalMetadataColumnId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database.Inputs[OLE DB Destination Input].ExternalColumns[UsedAgain]"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Outputs[Data Conversion Output].Columns[UsedAgain Converted]" />
+                        <inputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database.Inputs[OLE DB Destination Input].Columns[Satisfaction Converted]"
+                          cachedDataType="r4"
+                          cachedName="Satisfaction Converted"
+                          externalMetadataColumnId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database.Inputs[OLE DB Destination Input].ExternalColumns[Satisfaction]"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Outputs[Data Conversion Output].Columns[Satisfaction Converted]" />
+                        <inputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database.Inputs[OLE DB Destination Input].Columns[AIAssistanceLevel Converted]"
+                          cachedDataType="ui8"
+                          cachedName="AIAssistanceLevel Converted"
+                          externalMetadataColumnId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database.Inputs[OLE DB Destination Input].ExternalColumns[AIAssistanceLevel]"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Outputs[Data Conversion Output].Columns[AIAssistanceLevel Converted]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database.Inputs[OLE DB Destination Input].ExternalColumns[SessionID]"
+                          dataType="i4"
+                          name="SessionID" />
+                        <externalMetadataColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database.Inputs[OLE DB Destination Input].ExternalColumns[StudentLevel]"
+                          dataType="wstr"
+                          length="50"
+                          name="StudentLevel" />
+                        <externalMetadataColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database.Inputs[OLE DB Destination Input].ExternalColumns[Discipline]"
+                          dataType="wstr"
+                          length="50"
+                          name="Discipline" />
+                        <externalMetadataColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database.Inputs[OLE DB Destination Input].ExternalColumns[SessionDate]"
+                          dataType="dbDate"
+                          name="SessionDate" />
+                        <externalMetadataColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database.Inputs[OLE DB Destination Input].ExternalColumns[SessionLength]"
+                          dataType="r8"
+                          name="SessionLength" />
+                        <externalMetadataColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database.Inputs[OLE DB Destination Input].ExternalColumns[TotalPrompts]"
+                          dataType="i4"
+                          name="TotalPrompts" />
+                        <externalMetadataColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database.Inputs[OLE DB Destination Input].ExternalColumns[TaskType]"
+                          dataType="wstr"
+                          length="50"
+                          name="TaskType" />
+                        <externalMetadataColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database.Inputs[OLE DB Destination Input].ExternalColumns[FinalOutcome]"
+                          dataType="wstr"
+                          length="50"
+                          name="FinalOutcome" />
+                        <externalMetadataColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database.Inputs[OLE DB Destination Input].ExternalColumns[UsedAgain]"
+                          dataType="bool"
+                          name="UsedAgain" />
+                        <externalMetadataColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database.Inputs[OLE DB Destination Input].ExternalColumns[Satisfaction]"
+                          dataType="r8"
+                          name="Satisfaction" />
+                        <externalMetadataColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database.Inputs[OLE DB Destination Input].ExternalColumns[AIAssistanceLevel]"
+                          dataType="i4"
+                          name="AIAssistanceLevel" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Removing the SESSION word from the SessionID column"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Removing the SESSION word from the SessionID column"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Removing the SESSION word from the SessionID column.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Removing the SESSION word from the SessionID column.Inputs[Derived Column Input].Columns[SessionID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="SessionID"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[SessionID]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[REPLACE](#{Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output].Columns[SessionID]},"SESSION","")</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">REPLACE(SessionID,"SESSION","")</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Removing the SESSION word from the SessionID column.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Removing the SESSION word from the SessionID column.Inputs[Derived Column Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Removing the SESSION word from the SessionID column.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Removing the SESSION word from the SessionID column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Removing the SESSION word from the SessionID column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Removing the SESSION word from the SessionID column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Removing the SESSION word from the SessionID column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Removing the SESSION word from the SessionID column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database.Paths[Data Conversion Output]"
+                  endId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database.Inputs[OLE DB Destination Input]"
+                  name="Data Conversion Output"
+                  startId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database.Paths[Derived Column Output]"
+                  endId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table.Inputs[Data Conversion Input]"
+                  name="Derived Column Output"
+                  startId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Removing the SESSION word from the SessionID column.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database.Paths[OLE DB Source Output]"
+                  endId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Removing the SESSION word from the SessionID column.Inputs[Derived Column Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\STG Stage in the Data Cleaning Pipeline.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{E39DEAE3-2E1A-4BD4-B566-6AA57E8FEB6C}"
+          DTS:From="Package\STG Stage in the Data Cleaning Pipeline\Creating STG One Big Table"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="209.6,41.6"
+          Id="Package\STG Stage in the Data Cleaning Pipeline\Creating STG One Big Table"
+          TopLeft="155.342857977626,9.21176460734912" />
+        <NodeLayout
+          Size="388.8,41.6"
+          Id="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database"
+          TopLeft="69.6285720808773,89.505882184027" />
+        <EdgeLayout
+          Id="Package\STG Stage in the Data Cleaning Pipeline.PrecedenceConstraints[Constraint]"
+          TopLeft="262.085715029252,50.8117646073491">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38.6941175766779"
+              Start="0,0"
+              End="0,31.1941175766779">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.1941175766779" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="506.4,187.2"
+          Size="506.4,230.4"
+          Id="Package\STG Stage in the Data Cleaning Pipeline"
+          TopLeft="236.428571931866,59.6470587712465" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="347.2,41.6"
+          Id="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Removing the SESSION word from the SessionID column"
+          TopLeft="191.428571836073,109.823529340043" />
+        <NodeLayout
+          Size="352,41.6"
+          Id="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database"
+          TopLeft="186.428571825429,299.035293992972" />
+        <NodeLayout
+          Size="224,41.6"
+          Id="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS"
+          TopLeft="254.285714827022,27.5294117405753" />
+        <NodeLayout
+          Size="501.6,41.6"
+          Id="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Data Type Conversion to match the Data Types that are applied in the STG One Big Table"
+          TopLeft="113.571428813192,209.188235347071" />
+        <EdgeLayout
+          Id="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database.Paths[OLE DB Source Output]"
+          TopLeft="365.657143331547,69.1294117405753">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.694117599468"
+              Start="0,0"
+              End="0,33.194117599468">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.194117599468" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database.Paths[Derived Column Output]"
+          TopLeft="364.700000324632,151.423529340043">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57.7647060070277"
+              Start="0,0"
+              End="0,50.2647060070277">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.2647060070277" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database.Paths[Data Conversion Output]"
+          TopLeft="363.40000031931,250.788235347071">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48.2470586459015"
+              Start="0,0"
+              End="0,40.7470586459015">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.7470586459015" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Moving cleaned data from ODS database to STG database">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\STG Stage in the Data Cleaning Pipeline\Moving the raw data from the ODS database to the STG database\Extracting Raw Data from ODS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

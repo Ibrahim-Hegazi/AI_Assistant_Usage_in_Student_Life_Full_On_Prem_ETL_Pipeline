@@ -1,0 +1,10 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="3.2) DDL for Data Warehouse Dimension Creation From Oracle Data Modeler Modified.ddl"
+  DTS:DTSID="{03C1F3FB-597D-4FEB-9A95-5BCDA2C84B57}"
+  DTS:CreationName="FILE">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="C:\Users\noobh\Desktop\AI_Assistant_Usage_in_Student_Life_Full_On_Prem_ETL_Pipeline\DDL\3.2) DDL for Data Warehouse Dimension Creation From Oracle Data Modeler Modified.ddl" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

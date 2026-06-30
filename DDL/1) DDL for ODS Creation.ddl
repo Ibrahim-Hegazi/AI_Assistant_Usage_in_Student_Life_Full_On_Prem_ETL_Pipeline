@@ -22,29 +22,23 @@ EXEC('
     END;
 ');
 
--- 4. Truncate or Create the RawSessionData table inside the ODS database
+-- 4. Drop and recreate the RawSessionData table inside the ODS database
 EXEC('
     USE ODS;
     IF OBJECT_ID(''DB.RawSessionData'', ''U'') IS NOT NULL
-    BEGIN
-        -- Table exists, clear the old data
-        TRUNCATE TABLE DB.RawSessionData;
-    END
-    ELSE
-    BEGIN
-        -- Table does not exist, create it
-        CREATE TABLE DB.RawSessionData (
-            SessionID VARCHAR(255),
-            StudentLevel VARCHAR(255),
-            Discipline VARCHAR(255),
-            SessionDate VARCHAR(255),
-            SessionLength VARCHAR(255),
-            TotalPrompts VARCHAR(255),
-            TaskType VARCHAR(255),
-            AI_Assistance VARCHAR(255),
-            FinalOutcome VARCHAR(255),
-            UsedAgain VARCHAR(255),
-            Satisfaction VARCHAR(255)
-        );
-    END;
+        DROP TABLE DB.RawSessionData;
+
+    CREATE TABLE DB.RawSessionData (
+        SessionID VARCHAR(255),
+        StudentLevel VARCHAR(255),
+        Discipline VARCHAR(255),
+        SessionDate VARCHAR(255),
+        SessionLength VARCHAR(255),
+        TotalPrompts VARCHAR(255),
+        TaskType VARCHAR(255),
+        AI_Assistance VARCHAR(255),
+        FinalOutcome VARCHAR(255),
+        UsedAgain VARCHAR(255),
+        Satisfaction VARCHAR(255)
+    );
 ');

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="localhost.STG"
+  DTS:DTSID="{8F77A3C9-04A2-4A90-B351-052F2A15D38E}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=localhost;Initial Catalog=STG;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Data Cleaning-{8F77A3C9-04A2-4A90-B351-052F2A15D38E}localhost.STG;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

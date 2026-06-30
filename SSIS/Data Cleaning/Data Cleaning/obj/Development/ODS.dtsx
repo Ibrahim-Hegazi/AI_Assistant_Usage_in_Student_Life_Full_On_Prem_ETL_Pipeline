@@ -1,0 +1,820 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/30/2026 8:22:03 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="IBRAHIMHEGAZIVM"
+  DTS:CreatorName="IBRAHIMHEGAZIVM\noobh"
+  DTS:DTSID="{97DE91BE-C35B-487E-8F1A-EC39824619AE}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="ODS"
+  DTS:PackageType="5"
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{450885B6-B5FA-41E7-93BF-46628B1F8B2B}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\ODS Stage in the Data Cleaning Pipeline"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{9F759249-E8C3-453F-BF48-3723B848DF33}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ODS Stage in the Data Cleaning Pipeline">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\ODS Stage in the Data Cleaning Pipeline\Creating ODS One Big Table"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{EFD423FF-C600-4EC0-ABAC-45F32A7FEAB7}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Creating ODS One Big Table"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{62A18C2A-BAF1-4EFA-BF21-53BE5FA49281}"
+              SQLTask:SqlStmtSourceType="FileConnection"
+              SQLTask:SqlStatementSource="1) DDL for ODS Creation.ddl" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{5884BB3D-3D58-4871-9534-0E883F9A7FF3}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Moving the raw data from the source (locally) to the ODS database"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Moving raw data from device locally to ODS database"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[DB].[RawSessionData]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database.Connections[OleDbConnection]"
+                      connectionManagerID="{F618BE31-F78C-4A02-B6D9-0F673450D3A4}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Data Connection]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database.Inputs[OLE DB Destination Input].Columns[SessionID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="SessionID"
+                          externalMetadataColumnId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database.Inputs[OLE DB Destination Input].ExternalColumns[SessionID]"
+                          lineageId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].Columns[SessionID]" />
+                        <inputColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database.Inputs[OLE DB Destination Input].Columns[StudentLevel]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="StudentLevel"
+                          externalMetadataColumnId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database.Inputs[OLE DB Destination Input].ExternalColumns[StudentLevel]"
+                          lineageId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].Columns[StudentLevel]" />
+                        <inputColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database.Inputs[OLE DB Destination Input].Columns[Discipline]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Discipline"
+                          externalMetadataColumnId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database.Inputs[OLE DB Destination Input].ExternalColumns[Discipline]"
+                          lineageId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].Columns[Discipline]" />
+                        <inputColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database.Inputs[OLE DB Destination Input].Columns[SessionDate]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="SessionDate"
+                          externalMetadataColumnId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database.Inputs[OLE DB Destination Input].ExternalColumns[SessionDate]"
+                          lineageId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].Columns[SessionDate]" />
+                        <inputColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database.Inputs[OLE DB Destination Input].Columns[TotalPrompts]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="TotalPrompts"
+                          externalMetadataColumnId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database.Inputs[OLE DB Destination Input].ExternalColumns[TotalPrompts]"
+                          lineageId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].Columns[TotalPrompts]" />
+                        <inputColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database.Inputs[OLE DB Destination Input].Columns[TaskType]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="TaskType"
+                          externalMetadataColumnId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database.Inputs[OLE DB Destination Input].ExternalColumns[TaskType]"
+                          lineageId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].Columns[TaskType]" />
+                        <inputColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database.Inputs[OLE DB Destination Input].Columns[FinalOutcome]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="FinalOutcome"
+                          externalMetadataColumnId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database.Inputs[OLE DB Destination Input].ExternalColumns[FinalOutcome]"
+                          lineageId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].Columns[FinalOutcome]" />
+                        <inputColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database.Inputs[OLE DB Destination Input].Columns[UsedAgain]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="UsedAgain"
+                          externalMetadataColumnId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database.Inputs[OLE DB Destination Input].ExternalColumns[UsedAgain]"
+                          lineageId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].Columns[UsedAgain]" />
+                        <inputColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database.Inputs[OLE DB Destination Input].Columns[SessionLengthMin]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="SessionLengthMin"
+                          externalMetadataColumnId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database.Inputs[OLE DB Destination Input].ExternalColumns[SessionLength]"
+                          lineageId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].Columns[SessionLengthMin]" />
+                        <inputColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database.Inputs[OLE DB Destination Input].Columns[AI_AssistanceLevel]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="AI_AssistanceLevel"
+                          externalMetadataColumnId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database.Inputs[OLE DB Destination Input].ExternalColumns[AI_Assistance]"
+                          lineageId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].Columns[AI_AssistanceLevel]" />
+                        <inputColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database.Inputs[OLE DB Destination Input].Columns[SatisfactionRating]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="SatisfactionRating"
+                          externalMetadataColumnId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database.Inputs[OLE DB Destination Input].ExternalColumns[Satisfaction]"
+                          lineageId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].Columns[SatisfactionRating]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database.Inputs[OLE DB Destination Input].ExternalColumns[SessionID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="SessionID" />
+                        <externalMetadataColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database.Inputs[OLE DB Destination Input].ExternalColumns[StudentLevel]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="StudentLevel" />
+                        <externalMetadataColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database.Inputs[OLE DB Destination Input].ExternalColumns[Discipline]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="Discipline" />
+                        <externalMetadataColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database.Inputs[OLE DB Destination Input].ExternalColumns[SessionDate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="SessionDate" />
+                        <externalMetadataColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database.Inputs[OLE DB Destination Input].ExternalColumns[SessionLength]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="SessionLength" />
+                        <externalMetadataColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database.Inputs[OLE DB Destination Input].ExternalColumns[TotalPrompts]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="TotalPrompts" />
+                        <externalMetadataColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database.Inputs[OLE DB Destination Input].ExternalColumns[TaskType]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="TaskType" />
+                        <externalMetadataColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database.Inputs[OLE DB Destination Input].ExternalColumns[AI_Assistance]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="AI_Assistance" />
+                        <externalMetadataColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database.Inputs[OLE DB Destination Input].ExternalColumns[FinalOutcome]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="FinalOutcome" />
+                        <externalMetadataColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database.Inputs[OLE DB Destination Input].ExternalColumns[UsedAgain]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="UsedAgain" />
+                        <externalMetadataColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database.Inputs[OLE DB Destination Input].ExternalColumns[Satisfaction]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="Satisfaction" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="Reading the CSV Data from the device locally"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Connections[FlatFileConnection]"
+                      connectionManagerID="{7B664851-526D-4787-BEEC-26A0E86F0F66}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Raw Data From Source (Locally)]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].Columns[SessionID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].ExternalColumns[SessionID]"
+                          length="50"
+                          lineageId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].Columns[SessionID]"
+                          name="SessionID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].Columns[StudentLevel]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].ExternalColumns[StudentLevel]"
+                          length="50"
+                          lineageId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].Columns[StudentLevel]"
+                          name="StudentLevel"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].Columns[Discipline]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].ExternalColumns[Discipline]"
+                          length="50"
+                          lineageId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].Columns[Discipline]"
+                          name="Discipline"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].Columns[SessionDate]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].ExternalColumns[SessionDate]"
+                          length="50"
+                          lineageId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].Columns[SessionDate]"
+                          name="SessionDate"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].Columns[SessionLengthMin]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].ExternalColumns[SessionLengthMin]"
+                          length="50"
+                          lineageId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].Columns[SessionLengthMin]"
+                          name="SessionLengthMin"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].Columns[TotalPrompts]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].ExternalColumns[TotalPrompts]"
+                          length="50"
+                          lineageId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].Columns[TotalPrompts]"
+                          name="TotalPrompts"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].Columns[TaskType]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].ExternalColumns[TaskType]"
+                          length="50"
+                          lineageId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].Columns[TaskType]"
+                          name="TaskType"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].Columns[AI_AssistanceLevel]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].ExternalColumns[AI_AssistanceLevel]"
+                          length="50"
+                          lineageId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].Columns[AI_AssistanceLevel]"
+                          name="AI_AssistanceLevel"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].Columns[FinalOutcome]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].ExternalColumns[FinalOutcome]"
+                          length="50"
+                          lineageId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].Columns[FinalOutcome]"
+                          name="FinalOutcome"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].Columns[UsedAgain]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].ExternalColumns[UsedAgain]"
+                          length="50"
+                          lineageId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].Columns[UsedAgain]"
+                          name="UsedAgain"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].Columns[SatisfactionRating]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].ExternalColumns[SatisfactionRating]"
+                          length="50"
+                          lineageId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].Columns[SatisfactionRating]"
+                          name="SatisfactionRating"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].ExternalColumns[SessionID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SessionID" />
+                        <externalMetadataColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].ExternalColumns[StudentLevel]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="StudentLevel" />
+                        <externalMetadataColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].ExternalColumns[Discipline]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Discipline" />
+                        <externalMetadataColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].ExternalColumns[SessionDate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SessionDate" />
+                        <externalMetadataColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].ExternalColumns[SessionLengthMin]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SessionLengthMin" />
+                        <externalMetadataColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].ExternalColumns[TotalPrompts]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="TotalPrompts" />
+                        <externalMetadataColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].ExternalColumns[TaskType]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="TaskType" />
+                        <externalMetadataColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].ExternalColumns[AI_AssistanceLevel]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="AI_AssistanceLevel" />
+                        <externalMetadataColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].ExternalColumns[FinalOutcome]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="FinalOutcome" />
+                        <externalMetadataColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].ExternalColumns[UsedAgain]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="UsedAgain" />
+                        <externalMetadataColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output].ExternalColumns[SatisfactionRating]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SatisfactionRating" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database.Paths[Flat File Source Output]"
+                  endId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database.Inputs[OLE DB Destination Input]"
+                  name="Flat File Source Output"
+                  startId="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\ODS Stage in the Data Cleaning Pipeline.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{0C32B0C7-8B62-4AF6-A70A-B270D7ACF75A}"
+          DTS:From="Package\ODS Stage in the Data Cleaning Pipeline\Creating ODS One Big Table"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="211.2,41.6"
+          Id="Package\ODS Stage in the Data Cleaning Pipeline\Creating ODS One Big Table"
+          TopLeft="168.892857490678,11.6499998832012" />
+        <NodeLayout
+          Size="394.4,41.6"
+          Id="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database"
+          TopLeft="71.307143334208,104.041176296647" />
+        <EdgeLayout
+          Id="Package\ODS Stage in the Data Cleaning Pipeline.PrecedenceConstraints[Constraint]"
+          TopLeft="271.500000412443,53.2499998832012">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.7911764134458"
+              Start="0,0"
+              End="0,43.2911764134458">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.2911764134458" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="532,198.4"
+          Size="532,241.6"
+          Id="Package\ODS Stage in the Data Cleaning Pipeline"
+          TopLeft="152.857143182536,78.7647058133126" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="291.2,41.6"
+          Id="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Reading the CSV Data from the device locally"
+          TopLeft="205.714286152197,37.4705882024497" />
+        <NodeLayout
+          Size="330.4,41.6"
+          Id="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database"
+          TopLeft="191.428571836073,156.764705744943" />
+        <EdgeLayout
+          Id="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database.Paths[Flat File Source Output]"
+          TopLeft="353.971428994135,79.0705882024497">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,77.6941175424933"
+              Start="0,0"
+              End="0,70.1941175424933">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,70.1941175424933" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\ODS Stage in the Data Cleaning Pipeline\Moving the raw data from the source (locally) to the ODS database\Moving raw data from device locally to ODS database">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

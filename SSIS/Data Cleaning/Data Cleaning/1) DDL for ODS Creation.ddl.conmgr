@@ -1,0 +1,10 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="1) DDL for ODS Creation.ddl"
+  DTS:DTSID="{DC0E6F67-6D7A-422E-9B3A-ED8650216206}"
+  DTS:CreationName="FILE">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="C:\Users\noobh\Desktop\AI_Assistant_Usage_in_Student_Life_Full_On_Prem_ETL_Pipeline\DDL\1) DDL for ODS Creation.ddl" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
