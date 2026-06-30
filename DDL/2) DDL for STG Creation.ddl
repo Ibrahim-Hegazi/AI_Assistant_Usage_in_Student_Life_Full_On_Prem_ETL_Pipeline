@@ -41,9 +41,9 @@ EXEC('
             SessionLength FLOAT,
             TotalPrompts INT,
             TaskType NVARCHAR(50),
-            AI_Assistance INT,
+            AIAssistanceLevel INT,
             FinalOutcome NVARCHAR(50),
-            UsedAgain BOOLEAN,
+            UsedAgain BIT,
             Satisfaction FLOAT
         );
     END;
