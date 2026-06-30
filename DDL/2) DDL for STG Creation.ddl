@@ -25,15 +25,15 @@ EXEC('
 -- 4. Truncate or Create the properly-typed Staging table
 EXEC('
     USE STG;
-    IF OBJECT_ID(''DB.RawSessionData'', ''U'') IS NOT NULL
+    IF OBJECT_ID(''DB.CleanedSessionData'', ''U'') IS NOT NULL
     BEGIN
         -- Table exists, clear the old data
-        TRUNCATE TABLE DB.RawSessionData;
+        TRUNCATE TABLE DB.CleanedSessionData;
     END
     ELSE
     BEGIN
         -- Table does not exist, create it with DWH datatypes
-        CREATE TABLE DB.RawSessionData (
+        CREATE TABLE DB.CleanedSessionData (
             SessionID INT,
             StudentLevel NVARCHAR(50),
             Discipline NVARCHAR(50),
