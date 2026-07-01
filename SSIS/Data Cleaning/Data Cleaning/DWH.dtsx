@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="40"
-  DTS:VersionGUID="{6763D108-91D7-44F8-951B-7769D74297CD}">
+  DTS:VersionBuild="41"
+  DTS:VersionGUID="{5613C779-3F1C-41E6-B6B6-429CF4F49D65}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -5753,37 +5753,37 @@ where [refTable].[TaskType] = ?</property>
         <NodeLayout
           Size="254.4,41.6"
           Id="Package\DWH Dimensions Stage in the Data Cleaning Pipeline\Filling up AIAssistanceLevl Dimension"
-          TopLeft="98.9714289728471,398.458823424175" />
+          TopLeft="314.05079451006,101.073202769812" />
         <NodeLayout
           Size="219.2,41.6"
           Id="Package\DWH Dimensions Stage in the Data Cleaning Pipeline\Filling up Outcome Dimension"
-          TopLeft="111.82857185736,98.9058823321618" />
+          TopLeft="15.7968256211875,95.5071895246834" />
         <NodeLayout
           Size="260.8,41.6"
           Id="Package\DWH Dimensions Stage in the Data Cleaning Pipeline\Filling up Student Discipline Dimension"
-          TopLeft="93.9714289622035,284.411764789669" />
+          TopLeft="313.812699271457,199.575163576321" />
         <NodeLayout
           Size="240.8,41.6"
           Id="Package\DWH Dimensions Stage in the Data Cleaning Pipeline\Filling up Student Level Dimension"
-          TopLeft="103.257143267685,183.682352935144" />
+          TopLeft="6.43174623617219,192.17908495384" />
         <NodeLayout
           Size="224.8,41.6"
           Id="Package\DWH Dimensions Stage in the Data Cleaning Pipeline\Filling up Task Type Dimension"
-          TopLeft="107.885714571573,19.4823529009589" />
+          TopLeft="11.8539683354005,16.0836600934805" />
         <EdgeLayout
           Id="Package\DWH Dimensions Stage in the Data Cleaning Pipeline.PrecedenceConstraints[Constraint]"
-          TopLeft="224.014286114944,225.282352935144">
+          TopLeft="247.231746236172,216.677124265081">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,59.1294118545248"
+              EndConnector="66.5809530352853,0"
               Start="0,0"
-              End="0,51.6294118545248">
+              End="59.0809530352853,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,51.6294118545248" />
+                    End="59.0809530352853,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5794,18 +5794,18 @@ where [refTable].[TaskType] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DWH Dimensions Stage in the Data Cleaning Pipeline.PrecedenceConstraints[Constraint 1]"
-          TopLeft="225.271428967525,326.011764789669">
+          TopLeft="442.731746890758,199.575163576321">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,72.4470586345064"
+              EndConnector="0,-56.9019608065084"
               Start="0,0"
-              End="0,64.9470586345064">
+              End="0,-49.4019608065084">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,64.9470586345064" />
+                    End="0,-49.4019608065084" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5816,7 +5816,7 @@ where [refTable].[TaskType] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DWH Dimensions Stage in the Data Cleaning Pipeline.PrecedenceConstraints[Constraint 2]"
-          TopLeft="220.857143214467,61.0823529009589">
+          TopLeft="124.825396978294,57.6836600934805">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5838,18 +5838,18 @@ where [refTable].[TaskType] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DWH Dimensions Stage in the Data Cleaning Pipeline.PrecedenceConstraints[Constraint 3]"
-          TopLeft="222.542857562523,140.505882332162">
+          TopLeft="126.11428592868,137.107189524683">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,43.1764706029822"
+              EndConnector="0,55.0718954291568"
               Start="0,0"
-              End="0,35.6764706029822">
+              End="0,47.5718954291568">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.6764706029822" />
+                    End="0,47.5718954291568" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5861,10 +5861,10 @@ where [refTable].[TaskType] = ?</property>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="446.4,633.6"
-          Size="446.4,676.8"
+          PanelSize="582.4,633.6"
+          Size="582.4,676.8"
           Id="Package\DWH Dimensions Stage in the Data Cleaning Pipeline"
-          TopLeft="89.28571447578,22.9411764504794" />
+          TopLeft="109.909522944852,16.3137254961541" />
         <NodeLayout
           Size="191.2,41.6"
           Id="Package\DWH Fact Stage in the Data Cleaning Pipeline\Filling up the Fact Table"
@@ -5875,21 +5875,33 @@ where [refTable].[TaskType] = ?</property>
           PanelSize="302.4,125.6"
           Size="302.4,168.8"
           Id="Package\DWH Fact Stage in the Data Cleaning Pipeline"
-          TopLeft="669.514287035624,285.776470272527" />
+          TopLeft="813.165080992212,141.998692634021" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="535.68571447578,361.558823361503">
+          TopLeft="692.309522944852,354.713725496154">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="133.828572559844,0"
+              EndConnector="120.855558047361,-128.315032862133"
               Start="0,0"
-              End="126.328572559844,0">
+              End="113.355558047361,-128.315032862133">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="126.328572559844,0" />
+                    End="56.4277790236803,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="56.4277790236803,0"
+                    Point2="60.4277790236803,0"
+                    Point3="60.4277790236803,-4" />
+                  <mssgle:LineSegment
+                    End="60.4277790236803,-124.315032862133" />
+                  <mssgle:CubicBezierSegment
+                    Point1="60.4277790236803,-124.315032862133"
+                    Point2="60.4277790236803,-128.315032862133"
+                    Point3="64.4277790236803,-128.315032862133" />
+                  <mssgle:LineSegment
+                    End="113.355558047361,-128.315032862133" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6743,48 +6755,12 @@ where [refTable].[TaskType] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
           type="q3:string">[DB].[DimStudentLevel]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DWH Fact Stage in the Data Cleaning Pipeline\Filling up the Fact Table\Reading the Cleaned Data from the STG">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DWH Fact Stage in the Data Cleaning Pipeline\Filling up the Fact Table\Task Type Dimension Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[DB].[DimTaskType]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -6797,58 +6773,12 @@ where [refTable].[TaskType] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DWH Fact Stage in the Data Cleaning Pipeline\Filling up the Fact Table\Date Dimension Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[DB].[DimDate]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DWH Fact Stage in the Data Cleaning Pipeline\Filling up the Fact Table\Student Discipline Dimension Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[DB].[DimDiscipline]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\DWH Fact Stage in the Data Cleaning Pipeline\Filling up the Fact Table\Outcome Dimension Lookup">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -6858,30 +6788,7 @@ where [refTable].[TaskType] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DWH Fact Stage in the Data Cleaning Pipeline\Filling up the Fact Table\AIAssistanceLevel Dimension Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[DB].[DimAIAssistanceLevel]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6902,7 +6809,30 @@ where [refTable].[TaskType] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DWH Fact Stage in the Data Cleaning Pipeline\Filling up the Fact Table\Task Type Dimension lookup Error">
+    design-time-name="Package\DWH Fact Stage in the Data Cleaning Pipeline\Filling up the Fact Table\Task Type Dimension Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[DB].[DimTaskType]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DWH Fact Stage in the Data Cleaning Pipeline\Filling up the Fact Table\AIAssistanceLevel Dimension lookup Error">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6915,33 +6845,7 @@ where [refTable].[TaskType] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DWH Fact Stage in the Data Cleaning Pipeline\Filling up the Fact Table\Outcome Dimension lookup Error">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DWH Fact Stage in the Data Cleaning Pipeline\Filling up the Fact Table\Date Dimension lookup Error">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DWH Fact Stage in the Data Cleaning Pipeline\Filling up the Fact Table\Student Level Dimension lookup Error">
+    design-time-name="Package\DWH Fact Stage in the Data Cleaning Pipeline\Filling up the Fact Table\Reading the Cleaned Data from the STG">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6967,7 +6871,7 @@ where [refTable].[TaskType] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DWH Fact Stage in the Data Cleaning Pipeline\Filling up the Fact Table\AIAssistanceLevel Dimension lookup Error">
+    design-time-name="Package\DWH Fact Stage in the Data Cleaning Pipeline\Filling up the Fact Table\Student Level Dimension lookup Error">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6976,6 +6880,114 @@ where [refTable].[TaskType] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DWH Fact Stage in the Data Cleaning Pipeline\Filling up the Fact Table\Outcome Dimension lookup Error">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DWH Fact Stage in the Data Cleaning Pipeline\Filling up the Fact Table\Task Type Dimension lookup Error">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DWH Fact Stage in the Data Cleaning Pipeline\Filling up the Fact Table\Date Dimension Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[DB].[DimDate]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DWH Fact Stage in the Data Cleaning Pipeline\Filling up the Fact Table\Date Dimension lookup Error">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DWH Fact Stage in the Data Cleaning Pipeline\Filling up the Fact Table\AIAssistanceLevel Dimension Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[DB].[DimAIAssistanceLevel]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DWH Fact Stage in the Data Cleaning Pipeline\Filling up the Fact Table\Student Discipline Dimension Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[DB].[DimDiscipline]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
