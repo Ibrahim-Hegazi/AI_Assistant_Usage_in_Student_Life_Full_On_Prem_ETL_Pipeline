@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\noobh\\Desktop\\AI_Assistant_Usage_in_Student_Life_Full_On_Prem_ETL_Pipeline\\SSIS\\Data Cleaning\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1054A122-F100-7415-377B-EECDBEDA64DC}|Data Cleaning\\Data Cleaning.dtproj|C:\\Users\\noobh\\Desktop\\AI_Assistant_Usage_in_Student_Life_Full_On_Prem_ETL_Pipeline\\SSIS\\Data Cleaning\\Data Cleaning\\STG.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
-      "RelativeMoniker": "D:0:0:{1054A122-F100-7415-377B-EECDBEDA64DC}|Data Cleaning\\Data Cleaning.dtproj|solutionrelative:Data Cleaning\\STG.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1054A122-F100-7415-377B-EECDBEDA64DC}|Data Cleaning\\Data Cleaning.dtproj|C:\\Users\\noobh\\Desktop\\AI_Assistant_Usage_in_Student_Life_Full_On_Prem_ETL_Pipeline\\SSIS\\Data Cleaning\\Data Cleaning\\MainPackage.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
-      "RelativeMoniker": "D:0:0:{1054A122-F100-7415-377B-EECDBEDA64DC}|Data Cleaning\\Data Cleaning.dtproj|solutionrelative:Data Cleaning\\MainPackage.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1054A122-F100-7415-377B-EECDBEDA64DC}|Data Cleaning\\Data Cleaning.dtproj|C:\\Users\\noobh\\Desktop\\AI_Assistant_Usage_in_Student_Life_Full_On_Prem_ETL_Pipeline\\SSIS\\Data Cleaning\\Data Cleaning\\DWH.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
       "RelativeMoniker": "D:0:0:{1054A122-F100-7415-377B-EECDBEDA64DC}|Data Cleaning\\Data Cleaning.dtproj|solutionrelative:Data Cleaning\\DWH.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{1054A122-F100-7415-377B-EECDBEDA64DC}|Data Cleaning\\Data Cleaning.dtproj|C:\\Users\\noobh\\Desktop\\AI_Assistant_Usage_in_Student_Life_Full_On_Prem_ETL_Pipeline\\SSIS\\Data Cleaning\\Data Cleaning\\STG.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
+      "RelativeMoniker": "D:0:0:{1054A122-F100-7415-377B-EECDBEDA64DC}|Data Cleaning\\Data Cleaning.dtproj|solutionrelative:Data Cleaning\\STG.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1054A122-F100-7415-377B-EECDBEDA64DC}|Data Cleaning\\Data Cleaning.dtproj|C:\\Users\\noobh\\Desktop\\AI_Assistant_Usage_in_Student_Life_Full_On_Prem_ETL_Pipeline\\SSIS\\Data Cleaning\\Data Cleaning\\ODS.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
       "RelativeMoniker": "D:0:0:{1054A122-F100-7415-377B-EECDBEDA64DC}|Data Cleaning\\Data Cleaning.dtproj|solutionrelative:Data Cleaning\\ODS.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1054A122-F100-7415-377B-EECDBEDA64DC}|Data Cleaning\\Data Cleaning.dtproj|C:\\Users\\noobh\\Desktop\\AI_Assistant_Usage_in_Student_Life_Full_On_Prem_ETL_Pipeline\\SSIS\\Data Cleaning\\Data Cleaning\\MainPackage.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
+      "RelativeMoniker": "D:0:0:{1054A122-F100-7415-377B-EECDBEDA64DC}|Data Cleaning\\Data Cleaning.dtproj|solutionrelative:Data Cleaning\\MainPackage.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,11 +26,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "STG.dtsx [Design]",
               "DocumentMoniker": "C:\\Users\\noobh\\Desktop\\AI_Assistant_Usage_in_Student_Life_Full_On_Prem_ETL_Pipeline\\SSIS\\Data Cleaning\\Data Cleaning\\STG.dtsx",
               "RelativeDocumentMoniker": "Data Cleaning\\STG.dtsx",
@@ -43,7 +43,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "MainPackage.dtsx [Design]",
               "DocumentMoniker": "C:\\Users\\noobh\\Desktop\\AI_Assistant_Usage_in_Student_Life_Full_On_Prem_ETL_Pipeline\\SSIS\\Data Cleaning\\Data Cleaning\\MainPackage.dtsx",
               "RelativeDocumentMoniker": "Data Cleaning\\MainPackage.dtsx",
@@ -55,7 +55,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "DWH.dtsx [Design]",
               "DocumentMoniker": "C:\\Users\\noobh\\Desktop\\AI_Assistant_Usage_in_Student_Life_Full_On_Prem_ETL_Pipeline\\SSIS\\Data Cleaning\\Data Cleaning\\DWH.dtsx",
               "RelativeDocumentMoniker": "Data Cleaning\\DWH.dtsx",
@@ -67,7 +67,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "ODS.dtsx [Design]",
               "DocumentMoniker": "C:\\Users\\noobh\\Desktop\\AI_Assistant_Usage_in_Student_Life_Full_On_Prem_ETL_Pipeline\\SSIS\\Data Cleaning\\Data Cleaning\\ODS.dtsx",
               "RelativeDocumentMoniker": "Data Cleaning\\ODS.dtsx",

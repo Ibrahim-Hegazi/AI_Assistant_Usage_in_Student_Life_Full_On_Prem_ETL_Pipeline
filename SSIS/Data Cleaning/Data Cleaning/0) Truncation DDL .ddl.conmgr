@@ -1,0 +1,10 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="0) Truncation DDL .ddl"
+  DTS:DTSID="{14BD4F05-E00A-4C87-A607-7BBF786B3385}"
+  DTS:CreationName="FILE">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="C:\Users\noobh\Desktop\AI_Assistant_Usage_in_Student_Life_Full_On_Prem_ETL_Pipeline\DDL\0) Truncation DDL .ddl" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

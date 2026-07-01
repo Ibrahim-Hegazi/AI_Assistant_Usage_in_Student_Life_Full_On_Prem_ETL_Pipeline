@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{0F04F15E-56AB-46D2-8E54-29F56648DDC0}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{1E64E540-D038-4AE1-A1AE-5E4A57A7798A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -78,6 +78,24 @@
             </ExecutePackageTask>
           </DTS:ObjectData>
         </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Truncate ODS, STG, and DWH"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{9E775D0C-967F-4386-8BCE-35A03A4AB716}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Truncate ODS, STG, and DWH"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{62A18C2A-BAF1-4EFA-BF21-53BE5FA49281}"
+              SQLTask:SqlStmtSourceType="FileConnection"
+              SQLTask:SqlStatementSource="0) Truncation DDL .ddl" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
       </DTS:Executables>
       <DTS:PrecedenceConstraints>
         <DTS:PrecedenceConstraint
@@ -96,6 +114,14 @@
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
           DTS:To="Package\Sequence Container\Executing DWH Stage" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{149F58E5-0126-4FFB-A7ED-40EA0A100F5B}"
+          DTS:From="Package\Sequence Container\Truncate ODS, STG, and DWH"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Sequence Container\Executing ODS Stage" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
   </DTS:Executables>
@@ -112,49 +138,53 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="181.6,41.6"
+          Id="Package\Sequence Container\Executing DWH Stage"
+          TopLeft="51.2142858115996,297.176470261131" />
+        <NodeLayout
           Size="178.4,41.6"
           Id="Package\Sequence Container\Executing ODS Stage"
-          TopLeft="17.6428571687061,14.9999999202349" />
-        <EdgeLayout
-          Id="Package\Sequence Container.PrecedenceConstraints[Constraint]"
-          TopLeft="107.157142884512,56.5999999202349">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,47.1058822751867"
-              Start="0,0"
-              End="0,39.6058822751867">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,39.6058822751867" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="50.5000000957933,102.941176313739" />
         <NodeLayout
           Size="176.8,41.6"
           Id="Package\Sequence Container\Executing STG Stage"
-          TopLeft="19.0714286003186,103.705882195422" />
+          TopLeft="49.785714379987,193.176470352292" />
         <EdgeLayout
-          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
-          TopLeft="105.457142879191,145.305882195422">
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint]"
+          TopLeft="138.94285723789,144.541176313739">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,59.3411763821096"
+              EndConnector="0,48.6352940385526"
               Start="0,0"
-              End="0,51.8411763821096">
+              End="0,41.1352940385526">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,51.8411763821096" />
+                    End="0,41.1352940385526" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
+          TopLeft="140.100000095793,234.776470352292">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,62.3999999088396"
+              Start="0,0"
+              End="0,54.8999999088396">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.8999999088396" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -164,14 +194,36 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="181.6,41.6"
-          Id="Package\Sequence Container\Executing DWH Stage"
-          TopLeft="12.6428571580624,204.647058577531" />
+          Size="221.6,41.6"
+          Id="Package\Sequence Container\Truncate ODS, STG, and DWH"
+          TopLeft="28.3714294305264,12.2117646187441" />
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 2]"
+          TopLeft="139.43571476316,53.8117646187441">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49.1294116949952"
+              Start="0,0"
+              End="0,41.6294116949952">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.6294116949952" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="220,302.4"
-          Size="220,345.6"
+          PanelSize="255.2,390.4"
+          Size="255.2,433.6"
           Id="Package\Sequence Container"
           TopLeft="375.000000798276,90.9411764048995" />
       </GraphLayout>

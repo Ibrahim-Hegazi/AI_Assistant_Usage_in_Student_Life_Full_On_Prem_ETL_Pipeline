@@ -158,6 +158,112 @@ ALTER TABLE DB.FactSession ADD CONSTRAINT FactSession_PK PRIMARY KEY CLUSTERED (
 
 
 
+
+
+
+-- Crearting Lookup Error Tables
+
+CREATE TABLE [Error].[Task Type Dimension lookup Error] (
+    [SessionID] int,
+    [StudentLevel] nvarchar(50),
+    [Discipline] nvarchar(50),
+    [SessionDate] date,
+    [SessionLength] float,
+    [TotalPrompts] int,
+    [TaskType] nvarchar(50),
+    [FinalOutcome] nvarchar(50),
+    [UsedAgain] bit,
+    [Satisfaction] float,
+    [AIAssistanceLevel] int
+)
+
+
+
+CREATE TABLE [Error].[Outcome Dimension lookup Error] (
+    [SessionID] int,
+    [StudentLevel] nvarchar(50),
+    [Discipline] nvarchar(50),
+    [SessionDate] date,
+    [SessionLength] float,
+    [TotalPrompts] int,
+    [TaskType] nvarchar(50),
+    [FinalOutcome] nvarchar(50),
+    [UsedAgain] bit,
+    [Satisfaction] float,
+    [AIAssistanceLevel] int
+)
+
+
+
+CREATE TABLE [Error].[Date Dimension lookup Error] (
+    [SessionID] int,
+    [StudentLevel] nvarchar(50),
+    [Discipline] nvarchar(50),
+    [SessionDate] date,
+    [SessionLength] float,
+    [TotalPrompts] int,
+    [TaskType] nvarchar(50),
+    [FinalOutcome] nvarchar(50),
+    [UsedAgain] bit,
+    [Satisfaction] float,
+    [AIAssistanceLevel] int
+)
+
+
+
+
+CREATE TABLE [Error].[Student Level Dimension lookup Error] (
+    [SessionID] int,
+    [StudentLevel] nvarchar(50),
+    [Discipline] nvarchar(50),
+    [SessionDate] date,
+    [SessionLength] float,
+    [TotalPrompts] int,
+    [TaskType] nvarchar(50),
+    [FinalOutcome] nvarchar(50),
+    [UsedAgain] bit,
+    [Satisfaction] float,
+    [AIAssistanceLevel] int
+)
+
+
+
+
+CREATE TABLE [Error].[Student Discipline Dimension lookup Error] (
+    [SessionID] int,
+    [StudentLevel] nvarchar(50),
+    [Discipline] nvarchar(50),
+    [SessionDate] date,
+    [SessionLength] float,
+    [TotalPrompts] int,
+    [TaskType] nvarchar(50),
+    [FinalOutcome] nvarchar(50),
+    [UsedAgain] bit,
+    [Satisfaction] float,
+    [AIAssistanceLevel] int
+)
+
+
+
+
+CREATE TABLE [Error].[AIAssistanceLevel Dimension lookup Error] (
+    [SessionID] int,
+    [StudentLevel] nvarchar(50),
+    [Discipline] nvarchar(50),
+    [SessionDate] date,
+    [SessionLength] float,
+    [TotalPrompts] int,
+    [TaskType] nvarchar(50),
+    [FinalOutcome] nvarchar(50),
+    [UsedAgain] bit,
+    [Satisfaction] float,
+    [AIAssistanceLevel] int
+)
+
+
+
+
+
 /*
 -- Foreign Key Constraints (Updated with clean column names)
 ALTER TABLE DB.FactSession 
