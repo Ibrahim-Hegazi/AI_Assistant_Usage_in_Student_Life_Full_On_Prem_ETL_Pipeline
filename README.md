@@ -154,11 +154,13 @@ In the ODS layer, data from the source CSV files was loaded using Flat File Sour
 | **Flat File Source** | Read CSV data | - |
 | **ODS Load** | Insert into raw table | Direct insert with minimal validation |
 
-<img width="520" height="251" alt="2) ODS" src="https://github.com/user-attachments/assets/a41c6dd6-8595-47ee-a027-46239d7e9295" />
-
-
 
 <img width="757" height="230" alt="1) ODS" src="https://github.com/user-attachments/assets/ee0ff31b-5cb8-4c7b-baba-b5897fa44bf2" />
+
+
+
+<img width="520" height="251" alt="2) ODS" src="https://github.com/user-attachments/assets/a41c6dd6-8595-47ee-a027-46239d7e9295" />
+
 
 
 #### 2. Staging Area (STG)
