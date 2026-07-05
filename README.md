@@ -186,10 +186,10 @@ The final step in the ETL process was loading the clean data into the Data Wareh
 
 | Component | Purpose | Key Features |
 |-----------|---------|--------------|
-| **Dimension Load** | Populate dimension tables | SCD Type 1 (overwrite) |
-| **Fact Load** | Populate fact table | Insert new records |
-| **Error Handling** | Log failed records | Error table for debugging |
-| **Idempotency** | Truncate and reload | Ensures repeatability |
+| **Dimension Load** | Populate dimension tables |
+| **Fact Load** | Populate fact table |
+| **Error Handling** | Log failed records |
+| **Idempotency** | Truncate and reload |
 
 <img width="1366" height="416" alt="5) DWH" src="https://github.com/user-attachments/assets/f5192f70-a63a-4b2f-9ed2-913cce1d1273" />
 
