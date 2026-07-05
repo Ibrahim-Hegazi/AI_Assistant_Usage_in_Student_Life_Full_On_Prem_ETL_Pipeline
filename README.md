@@ -238,7 +238,7 @@ The final step in the ETL process was loading the clean data into the Data Wareh
 
 
 - **Purpose:** Answer Q1 - Segmentation and distribution analysis
-- **Key Visuals:** Bar charts, matrix visualizations, distribution plots
+- **Key Visuals:** Bar charts, distribution plots
 
 
 
