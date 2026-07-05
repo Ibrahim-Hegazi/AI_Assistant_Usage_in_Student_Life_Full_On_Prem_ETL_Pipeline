@@ -236,7 +236,7 @@ The final step in the ETL process was loading the clean data into the Data Wareh
 <img width="1122" height="636" alt="4" src="https://github.com/user-attachments/assets/63c8af43-d9d7-4a68-aeff-365ac789d1ca" />
 
 
-- **Purpose:** Answer Q2-Q6 - Segmentation and distribution analysis
+- **Purpose:** Answer Q1 - Segmentation and distribution analysis
 - **Key Visuals:** Bar charts, matrix visualizations, distribution plots
 
 
@@ -245,8 +245,8 @@ The final step in the ETL process was loading the clean data into the Data Wareh
 
 | Measure | DAX Formula | Purpose |
 |---------|-------------|---------|
-| Avg Satisfaction | `AVERAGE(SatisfactionRating[Rating])` | Satisfaction tracking |
-| Avg Session Length | `AVERAGE(SessionLengthMin[Length])` | Engagement tracking |
+| Avg Satisfaction | `AVERAGE(FactSession[SatisfactionRating])` | Satisfaction tracking |
+| Avg Session Length | `AVERAGE(FactSession[SessionLengthMin])` | Engagement tracking |
 
 ### Power BI Implementation Details
 
