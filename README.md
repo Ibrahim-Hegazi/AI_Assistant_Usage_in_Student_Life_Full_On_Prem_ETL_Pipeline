@@ -1,11 +1,5 @@
-# 🤖 AI Assistant Usage in Student Life
+# 🤖 AI Assistant Usage in Student Life Analytics
 
-## Comprehensive Business Intelligence Solution
-
-**Prepared by:** Ibrahim Hegazi  
-**Date:** 1/7/2026
-
----
 
 ## 📋 Table of Contents
 
@@ -13,7 +7,7 @@
    - 1.1 [Analytical Questions](#11-analytical-questions)
 2. [Conceptual, Logical & Physical Model](#2-conceptual-logical--physical-model)
    - 2.1 [Logical Model](#21-logical-model)
-   - 2.2 [Physical Model](#22-physical-model)
+   - 2.2 [Relational Model](#22-relational-model)
 3. [SSIS Overview](#3-ssis-overview)
 4. [SSAS Overview](#4-ssas-overview)
 5. [Power BI Overview](#5-power-bi-overview)
@@ -72,9 +66,6 @@ The project is based on an **AI Assistance Usage in Student Life Dataset** compr
 | SessionID data type is str | Change to int or index optimized type |
 | SessionDate data type is str | Change to date type |
 | AI_AssistanceLevel header formatting inconsistent | Standardize column header naming convention |
-| Outliers in SessionLengthMin (302 outliers > 52.23 min) | Cap at 52.23 minutes |
-| Outliers in TotalPrompts (265 outliers > 17 prompts) | Cap at 17 prompts |
-| AI_AssistanceLevel outliers at Level 1 | Investigate if Level 1 is valid |
 
 ---
 
@@ -83,20 +74,6 @@ The project is based on an **AI Assistance Usage in Student Life Dataset** compr
 #### Q1: Session Length Optimization
 > *"What is the optimal session length (SessionLengthMin) that maximizes satisfaction rating (SatisfactionRating) for students of different levels (StudentLevel), to identify the ideal session duration for each student segment?"*
 
-#### Q2: Task Type & AI Effectiveness
-> *"How does the effectiveness of AI_AssistanceLevel vary across different TaskTypes (6 categories) in predicting FinalOutcome, to prioritize AI feature development for the most impactful task types?"*
-
-#### Q3: Subject Difficulty & Performance
-> *"Which Disciplines (7 categories) show the strongest relationship between TotalPrompts and FinalOutcome, to identify subjects where students need the most support and where prompt-based learning is most effective?"*
-
-#### Q4: Prompt Usage & Outcomes
-> *"What is the relationship between TotalPrompts and FinalOutcome, controlling for AI_AssistanceLevel, to identify the optimal number of prompts that maximizes completion rates without causing cognitive overload?"*
-
-#### Q5: Time-Based Performance Patterns
-> *"How does student performance (FinalOutcome) and engagement (SessionLengthMin, TotalPrompts) vary by day of week and month (SessionDate), to identify optimal timing for interventions and resource allocation?"*
-
-#### Q6: AI Assistance & Satisfaction Drivers
-> *"What is the combined effect of AI_AssistanceLevel, SessionLengthMin, and TotalPrompts on SatisfactionRating, and which of these factors has the strongest influence, to prioritize improvements for maximum satisfaction impact and to create a student risk score for early intervention?"*
 
 ---
 
@@ -108,84 +85,20 @@ The conceptual model defines the core entities, their roles, and relationships w
 
 #### Conceptual ERD
 
-```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                         CONCEPTUAL MODEL                                    │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                             │
-│   ┌──────────────┐     ┌──────────────┐     ┌──────────────┐               │
-│   │   STUDENT    │     │   SESSION    │     │   ACTIVITY   │               │
-│   │──────────────│     │──────────────│     │──────────────│               │
-│   │ StudentLevel │─────│ SessionID    │─────│ TaskType     │               │
-│   │ Discipline   │     │ Date         │     │ Outcome      │               │
-│   │              │     │ Length       │     │              │               │
-│   │              │     │ Prompts      │     │              │               │
-│   │              │     │ AI Level     │     │              │               │
-│   │              │     │ Satisfaction │     │              │               │
-│   │              │     │ UsedAgain    │     │              │               │
-│   └──────────────┘     └──────────────┘     └──────────────┘               │
-│                                                                             │
-└─────────────────────────────────────────────────────────────────────────────┘
-```
+<img width="1128" height="563" alt="7) Conceptual Model" src="https://github.com/user-attachments/assets/1ada65e8-ee5c-4f6b-9a32-abf42c24dca1" />
+
 
 ### 2.2 Logical Model
 
 A logical model is a detailed, technology-independent representation of the data or information requirements of a system or business domain. It describes **what** data is needed and how it is structured, without specifying **how** it will be physically implemented.
 
-#### Logical Model Diagram
+<img width="871" height="430" alt="8) Logical Model" src="https://github.com/user-attachments/assets/5d59ed2d-aecf-4a01-8b8c-b923fb637761" />
 
-```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                           LOGICAL MODEL                                     │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                             │
-│  ┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐       │
-│  │   DimStudent    │     │   DimActivity   │     │   DimAILevel    │       │
-│  │─────────────────│     │─────────────────│     │─────────────────│       │
-│  │ StudentKey (PK) │     │ ActivityKey (PK)│     │ AILevelKey (PK) │       │
-│  │ StudentLevel    │     │ TaskType        │     │ AI_Assistance   │       │
-│  │ Discipline      │     │ Category        │     │ Level           │       │
-│  │ Segment         │     │ Complexity      │     │ AITier          │       │
-│  └─────────────────┘     └─────────────────┘     └─────────────────┘       │
-│           │                       │                       │                │
-│           │                       │                       │                │
-│           ▼                       ▼                       ▼                │
-│  ┌─────────────────────────────────────────────────────────────────┐       │
-│  │                    FactSession (Fact Table)                     │       │
-│  │─────────────────────────────────────────────────────────────────│       │
-│  │  SessionKey (PK)                                                 │       │
-│  │  StudentKey (FK) ────────────────────────────────────┐          │       │
-│  │  DateKey (FK) ──────────────────────────────┐       │          │       │
-│  │  ActivityKey (FK) ──────────────────┐       │       │          │       │
-│  │  AILevelKey (FK) ───────────┐       │       │       │          │       │
-│  │  OutcomeKey (FK) ───┐       │       │       │       │          │       │
-│  │─────────────────────────────────────────────────────────────────│       │
-│  │  SessionLengthMin     │       │       │       │          │       │       │
-│  │  TotalPrompts         │       │       │       │          │       │       │
-│  │  SatisfactionRating   │       │       │       │          │       │       │
-│  │  UsedAgain (Binary)   │       │       │       │          │       │       │
-│  └─────────────────────────────────────────────────────────────────┘       │
-│           ▲                       ▲                       ▲                │
-│           │                       │                       │                │
-│           │                       │                       │                │
-│  ┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐       │
-│  │    DimDate      │     │   DimOutcome    │     │   DimSession    │       │
-│  │─────────────────│     │─────────────────│     │─────────────────│       │
-│  │ DateKey (PK)    │     │ OutcomeKey (PK) │     │ SessionKey (PK) │       │
-│  │ FullDate        │     │ OutcomeStatus   │     │ SessionID       │       │
-│  │ Year            │     │ IsSuccess       │     │ LengthBin       │       │
-│  │ Quarter         │     │ UsedAgain       │     │ PromptCategory  │       │
-│  │ Month           │     │ RiskLevel       │     │ AITier          │       │
-│  │ Day             │     └─────────────────┘     └─────────────────┘       │
-│  │ IsWeekend       │                                                       │
-│  └─────────────────┘                                                       │
-│                                                                             │
-└─────────────────────────────────────────────────────────────────────────────┘
-```
 
-### 2.3 Physical Model
+### 2.3 Relational Model
 
-**Tables Stored Physically:**
+<img width="1482" height="585" alt="9) Relational Model" src="https://github.com/user-attachments/assets/bcdc0171-3962-4d44-aa3e-819771d3acaf" />
+
 
 | Table Name | Type | Description |
 |------------|------|-------------|
@@ -240,8 +153,10 @@ In the ODS layer, data from the source CSV files was loaded using Flat File Sour
 | Component | Purpose | Key Transformations |
 |-----------|---------|---------------------|
 | **Flat File Source** | Read CSV data | - |
-| **Data Conversion** | Convert data types | String → Date, String → Numeric |
 | **ODS Load** | Insert into raw table | Direct insert with minimal validation |
+<img width="520" height="251" alt="2) ODS" src="https://github.com/user-attachments/assets/a41c6dd6-8595-47ee-a027-46239d7e9295" />
+<img width="757" height="230" alt="1) ODS" src="https://github.com/user-attachments/assets/ee0ff31b-5cb8-4c7b-baba-b5897fa44bf2" />
+
 
 #### 2. Staging Area (STG)
 In the Staging layer, data was transformed and cleaned to prepare it for loading into the final warehouse schema. We are still using the **One Big Table Design Pattern**.
