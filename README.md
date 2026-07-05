@@ -15,7 +15,7 @@
 
 ## 1. Data Overview
 
-The project is based on an **AI Assistance Usage in Student Life Dataset** comprising **10,000 rows**. The dataset is used to build a full-stack Business Intelligence solution using Python for EDA, SQL for Schema Creation, SSIS for ETL, SSAS Tabular for analytics, and Power BI for interactive reporting.
+The project is based on an **AI Assistance Usage in Student Life Dataset** comprising **10,000 rows**. The dataset is used to build a full-stack Business Intelligence solution using Python for EDA, SQL for Schema Creation, SSIS for ETL, and Power BI for interactive reporting.
 
 ### Data Source
 - **Input Format:** CSV file
@@ -309,7 +309,7 @@ The final step in the ETL process was loading the clean data into the Data Wareh
 │                                      ▼                                      │
 │  PHASE 5: Business Intelligence & Final Reporting                          │
 │  ┌─────────────────────────────────────────────────────────────────────┐   │
-│  │  SSAS Tabular → Power BI Semantic → Power BI Reports → Dashboard   │   │
+│  │   Power BI Semantic → Power BI Reports → Dashboard                 │   │
 │  └─────────────────────────────────────────────────────────────────────┘   │
 │                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
