@@ -184,8 +184,8 @@ In the Staging layer, data was transformed and cleaned to prepare it for loading
 #### 3. Data Warehouse (DWH)
 The final step in the ETL process was loading the clean data into the Data Warehouse layer, which follows a **star schema structure**.
 
-| Component | Purpose | Key Features |
-|-----------|---------|--------------|
+| Component | Purpose |
+|-----------|---------|
 | **Dimension Load** | Populate dimension tables |
 | **Fact Load** | Populate fact table |
 | **Error Handling** | Log failed records |
