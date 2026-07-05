@@ -130,16 +130,16 @@ To build a clean, high-quality data model for analysis, a robust ETL (Extract, T
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                         ETL PIPELINE ARCHITECTURE                          │
+│                         ETL PIPELINE ARCHITECTURE                           │
 ├─────────────────────────────────────────────────────────────────────────────┤
 │                                                                             │
-│   CSV Source ──► ODS Layer ──► Staging Layer ──► Data Warehouse Layer      │
+│   CSV Source ──► ODS Layer ──► Staging Layer ──► Data Warehouse Layer       │
 │                                                                             │
-│   ┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐            │
-│   │   CSV    │    │   ODS    │    │   STG    │    │   DWH    │            │
-│   │  Source  │───►│  Load    │───►│  Clean   │───►│  Load    │            │
-│   │  Files   │    │  Raw     │    │ & Trans  │    │  Star    │            │
-│   └──────────┘    └──────────┘    └──────────┘    └──────────┘            │
+│   ┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐              │
+│   │   CSV    │    │   ODS    │    │   STG    │    │   DWH    │              │
+│   │  Source  │───►│  Load    │───►│  Clean   │───►│  Load    │              │
+│   │  Files   │    │  Raw     │    │ & Trans  │    │  Star    │              │
+│   └──────────┘    └──────────┘    └──────────┘    └──────────┘              │
 │                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
