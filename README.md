@@ -222,7 +222,7 @@ The final step in the ETL process was loading the clean data into the Data Wareh
 
 
 - **Purpose:** Explain report context and business questions
-- **Key Visuals:** Text boxes, icons, question mapping
+- **Key Visuals:** Text boxes, navigation buttons
 
 #### Page 3: Optimal Session Length Explorer
 
