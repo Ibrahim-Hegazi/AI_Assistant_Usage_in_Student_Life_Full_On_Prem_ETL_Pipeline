@@ -230,8 +230,7 @@ The final step in the ETL process was loading the clean data into the Data Wareh
 
 
 - **Purpose:** Answer Q1 - Session length optimization
-- - **Key Visuals:** KPI cards, navigation buttons, executive summary
-- **Key Visuals:** Scatter plots, line charts, slicers by StudentLevel
+- **Key Visuals:** Scatter plots, line charts, slicers by Dimensions
 
 #### Page 4: Segment Deep-Dive & Distribution
 
