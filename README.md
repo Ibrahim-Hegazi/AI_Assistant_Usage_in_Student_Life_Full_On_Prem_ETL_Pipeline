@@ -208,56 +208,44 @@ The final step in the ETL process was loading the clean data into the Data Wareh
 ### Dashboard Pages
 
 #### Page 1: Landing Page
+
+<img width="1127" height="636" alt="1" src="https://github.com/user-attachments/assets/f38cd4bf-a413-4370-8bf7-244df645c5ae" />
+
+
 - **Purpose:** Navigation hub and high-level KPIs
 - **Key Visuals:** KPI cards, navigation buttons, executive summary
 
 #### Page 2: Report Purpose & Scope
+
+<img width="1127" height="638" alt="2" src="https://github.com/user-attachments/assets/6e1b0795-e1a9-4ec7-84e1-8648fb840b4b" />
+
+
 - **Purpose:** Explain report context and business questions
 - **Key Visuals:** Text boxes, icons, question mapping
 
 #### Page 3: Optimal Session Length Explorer
+
+<img width="1127" height="634" alt="3" src="https://github.com/user-attachments/assets/d7ad7611-0f0b-4e64-ad57-9f48014996a3" />
+
+
 - **Purpose:** Answer Q1 - Session length optimization
 - **Key Visuals:** Scatter plots, line charts, slicers by StudentLevel
 
 #### Page 4: Segment Deep-Dive & Distribution
+
+<img width="1122" height="636" alt="4" src="https://github.com/user-attachments/assets/63c8af43-d9d7-4a68-aeff-365ac789d1ca" />
+
+
 - **Purpose:** Answer Q2-Q6 - Segmentation and distribution analysis
 - **Key Visuals:** Bar charts, matrix visualizations, distribution plots
 
-### Report Architecture
 
-```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                    POWER BI REPORT ARCHITECTURE                            │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                             │
-│   Semantic Layer              Visual Layer                                 │
-│   ┌────────────────────┐     ┌────────────────────┐                      │
-│   │ Derived Columns    │     │ Executive Summary  │                      │
-│   │ ────────────────── │     │ ────────────────── │                      │
-│   │ SessionMonth       │─────►│ KPI Cards          │                      │
-│   │ SessionQuarter     │     │ Trend Lines        │                      │
-│   │ DayOfWeek          │     │ Distributions      │                      │
-│   │ IsWeekend          │     │ ────────────────── │                      │
-│   │ TimeOfDay          │     │ Segmentation Views │                      │
-│   │ ────────────────── │     │ ────────────────── │                      │
-│   │ Aggregations       │     │ Drill-Through      │                      │
-│   │ ────────────────── │     │ ────────────────── │                      │
-│   │ Retention Rate     │     │ Filtering          │                      │
-│   │ Success Rate       │     │ Slicers            │                      │
-│   │ AI Lift            │     └────────────────────┘                      │
-│   └────────────────────┘                                                  │
-│                                                                             │
-└─────────────────────────────────────────────────────────────────────────────┘
-```
 
 ### DAX Measures Created
 
 | Measure | DAX Formula | Purpose |
 |---------|-------------|---------|
-| Retention Rate | `DIVIDE(COUNT(UsedAgain[Returned]), COUNT(Students))` | Track retention |
 | Avg Satisfaction | `AVERAGE(SatisfactionRating[Rating])` | Satisfaction tracking |
-| Success Rate | `DIVIDE(COUNT(Completed), COUNT(Sessions))` | Success measurement |
-| AI Lift | `CALCULATE([Success Rate], AI=4) - CALCULATE([Success Rate], AI=0)` | AI effectiveness |
 | Avg Session Length | `AVERAGE(SessionLengthMin[Length])` | Engagement tracking |
 
 ### Power BI Implementation Details
@@ -267,9 +255,9 @@ The final step in the ETL process was loading the clean data into the Data Wareh
 | Challenge | Solution |
 |-----------|----------|
 | **Date Intelligence** | Created Date dimension with relationships |
-| **DAX Measures** | Implemented 35+ measures for all KPIs |
+| **DAX Measures** | Implemented 10+ measures for all KPIs |
 | **Performance** | Optimized aggregations and query reduction |
-| **Interactivity** | Slicers, cross-filtering, drill-through |
+| **Interactivity** | Slicers |
 | **User Experience** | Clean design, intuitive navigation |
 
 ---
@@ -277,43 +265,8 @@ The final step in the ETL process was loading the clean data into the Data Wareh
 ## 📊 System Architecture Summary
 
 ### Data Flow Pipeline
+<img width="1263" height="634" alt="14) System Architecture" src="https://github.com/user-attachments/assets/1146161a-e60b-4bdd-b665-a9f2440d8a15" />
 
-```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                         SYSTEM ARCHITECTURE                                │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                             │
-│  PHASE 1: Data Acquisition & EDA                                           │
-│  ┌─────────────────────────────────────────────────────────────────────┐   │
-│  │  Kaggle → CSV → Python EDA → Data Understanding                     │   │
-│  └─────────────────────────────────────────────────────────────────────┘   │
-│                                      │                                      │
-│                                      ▼                                      │
-│  PHASE 2: Documentation & Discovery                                        │
-│  ┌─────────────────────────────────────────────────────────────────────┐   │
-│  │  Data Dictionary → Profiling → Issues → SMART Questions → KPIs     │   │
-│  └─────────────────────────────────────────────────────────────────────┘   │
-│                                      │                                      │
-│                                      ▼                                      │
-│  PHASE 3: Data Modeling                                                    │
-│  ┌─────────────────────────────────────────────────────────────────────┐   │
-│  │  Conceptual → Logical → Relational → DDL Generation                │   │
-│  └─────────────────────────────────────────────────────────────────────┘   │
-│                                      │                                      │
-│                                      ▼                                      │
-│  PHASE 4: Database Setup & ETL Pipeline                                    │
-│  ┌─────────────────────────────────────────────────────────────────────┐   │
-│  │  DDL → SQL Server → SSIS ODS → SSIS STG → SSIS DWH → Python Export │   │
-│  └─────────────────────────────────────────────────────────────────────┘   │
-│                                      │                                      │
-│                                      ▼                                      │
-│  PHASE 5: Business Intelligence & Final Reporting                          │
-│  ┌─────────────────────────────────────────────────────────────────────┐   │
-│  │   Power BI Semantic → Power BI Reports → Dashboard                 │   │
-│  └─────────────────────────────────────────────────────────────────────┘   │
-│                                                                             │
-└─────────────────────────────────────────────────────────────────────────────┘
-```
 
 ### Technology Stack Summary
 
