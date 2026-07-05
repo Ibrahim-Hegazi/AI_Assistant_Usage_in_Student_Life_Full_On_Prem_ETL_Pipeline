@@ -154,7 +154,9 @@ In the ODS layer, data from the source CSV files was loaded using Flat File Sour
 |-----------|---------|---------------------|
 | **Flat File Source** | Read CSV data | - |
 | **ODS Load** | Insert into raw table | Direct insert with minimal validation |
+
 <img width="520" height="251" alt="2) ODS" src="https://github.com/user-attachments/assets/a41c6dd6-8595-47ee-a027-46239d7e9295" />
+
 <img width="757" height="230" alt="1) ODS" src="https://github.com/user-attachments/assets/ee0ff31b-5cb8-4c7b-baba-b5897fa44bf2" />
 
 
@@ -169,6 +171,11 @@ In the Staging layer, data was transformed and cleaned to prepare it for loading
 | **Conditional Split** | Filter Outliers | Cap at 99th percentile |
 | **Data Conversion** | Standardize data types | All columns to DWH types |
 | **Lookup** | Validate foreign keys | Check against dimension tables |
+
+<img width="730" height="372" alt="4) STG" src="https://github.com/user-attachments/assets/57755bde-c8fb-4cbe-a608-c3e707602c70" />
+
+<img width="731" height="240" alt="3) STG" src="https://github.com/user-attachments/assets/e04ca359-af0e-45f0-8cee-a9c77735a43a" />
+
 
 #### 3. Data Warehouse (DWH)
 The final step in the ETL process was loading the clean data into the Data Warehouse layer, which follows a **star schema structure**.
