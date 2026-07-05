@@ -1,7 +1,7 @@
-<img width="1366" height="416" alt="5) DWH" src="https://github.com/user-attachments/assets/bf289849-3d01-4a17-a865-63b92a5b97c3" /># 🤖 AI Assistant Usage in Student Life Analytics
+# AI Assistant Usage in Student Life Analytics
 
 
-## 📋 Table of Contents
+## Table of Contents
 
 1. [Data Overview](#1-data-overview)
    - 1.1 [Analytical Questions](#11-analytical-questions)
@@ -189,14 +189,14 @@ The final step in the ETL process was loading the clean data into the Data Wareh
 | **Error Handling** | Log failed records | Error table for debugging |
 | **Idempotency** | Truncate and reload | Ensures repeatability |
 
+<img width="1366" height="416" alt="5) DWH" src="https://github.com/user-attachments/assets/f5192f70-a63a-4b2f-9ed2-913cce1d1273" />
+
+
 
 <img width="928" height="176" alt="8) DWH" src="https://github.com/user-attachments/assets/74fda6fc-391c-4865-b35b-620954ac30e0" />
-
-
-
 <img width="947" height="335" alt="7) DWH" src="https://github.com/user-attachments/assets/9a635cb1-7977-4ef6-89db-c55ff9671c5b" />
 <img width="908" height="368" alt="6) DWH" src="https://github.com/user-attachments/assets/0dc3ad95-5b2e-46fd-a376-19af7358bdc4" />
-<img width="1366" height="416" alt="5) DWH" src="https://github.com/user-attachments/assets/f5192f70-a63a-4b2f-9ed2-913cce1d1273" />
+
 
 
 ---
