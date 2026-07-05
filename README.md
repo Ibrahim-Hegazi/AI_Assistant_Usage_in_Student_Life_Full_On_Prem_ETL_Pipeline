@@ -1,4 +1,4 @@
-# 🤖 AI Assistant Usage in Student Life Analytics
+<img width="1366" height="416" alt="5) DWH" src="https://github.com/user-attachments/assets/bf289849-3d01-4a17-a865-63b92a5b97c3" /># 🤖 AI Assistant Usage in Student Life Analytics
 
 
 ## 📋 Table of Contents
@@ -9,8 +9,7 @@
    - 2.1 [Logical Model](#21-logical-model)
    - 2.2 [Relational Model](#22-relational-model)
 3. [SSIS Overview](#3-ssis-overview)
-4. [SSAS Overview](#4-ssas-overview)
-5. [Power BI Overview](#5-power-bi-overview)
+4. [Power BI Overview](#4-power-bi-overview)
 
 ---
 
@@ -157,6 +156,8 @@ In the ODS layer, data from the source CSV files was loaded using Flat File Sour
 
 <img width="520" height="251" alt="2) ODS" src="https://github.com/user-attachments/assets/a41c6dd6-8595-47ee-a027-46239d7e9295" />
 
+
+
 <img width="757" height="230" alt="1) ODS" src="https://github.com/user-attachments/assets/ee0ff31b-5cb8-4c7b-baba-b5897fa44bf2" />
 
 
@@ -165,16 +166,17 @@ In the Staging layer, data was transformed and cleaned to prepare it for loading
 
 | Transformation | Purpose | Implementation |
 |----------------|---------|----------------|
-| **Derived Column** | Convert SessionDate | String → Datetime |
-| **Derived Column** | Convert UsedAgain | Boolean → 0/1 |
-| **Conditional Split** | Validate AI_AssistanceLevel | Check 0-4 range |
-| **Conditional Split** | Filter Outliers | Cap at 99th percentile |
+| **Derived Column** | Remove 'SESSION' word from SessionID | SESSION444 → 444 |
 | **Data Conversion** | Standardize data types | All columns to DWH types |
-| **Lookup** | Validate foreign keys | Check against dimension tables |
+
+
+
+<img width="731" height="240" alt="3) STG" src="https://github.com/user-attachments/assets/e04ca359-af0e-45f0-8cee-a9c77735a43a" />
+
+
 
 <img width="730" height="372" alt="4) STG" src="https://github.com/user-attachments/assets/57755bde-c8fb-4cbe-a608-c3e707602c70" />
 
-<img width="731" height="240" alt="3) STG" src="https://github.com/user-attachments/assets/e04ca359-af0e-45f0-8cee-a9c77735a43a" />
 
 
 #### 3. Data Warehouse (DWH)
@@ -187,57 +189,21 @@ The final step in the ETL process was loading the clean data into the Data Wareh
 | **Error Handling** | Log failed records | Error table for debugging |
 | **Idempotency** | Truncate and reload | Ensures repeatability |
 
----
 
-## 4. SSAS Overview
+<img width="928" height="176" alt="8) DWH" src="https://github.com/user-attachments/assets/74fda6fc-391c-4865-b35b-620954ac30e0" />
 
-### SSAS Tabular Model
 
-**Purpose:** Provide a semantic layer for analytical querying and reporting.
 
-**Architecture:**
+<img width="947" height="335" alt="7) DWH" src="https://github.com/user-attachments/assets/9a635cb1-7977-4ef6-89db-c55ff9671c5b" />
+<img width="908" height="368" alt="6) DWH" src="https://github.com/user-attachments/assets/0dc3ad95-5b2e-46fd-a376-19af7358bdc4" />
+<img width="1366" height="416" alt="5) DWH" src="https://github.com/user-attachments/assets/f5192f70-a63a-4b2f-9ed2-913cce1d1273" />
 
-```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                         SSAS TABULAR MODEL                                  │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                             │
-│   Dimensions           Measures             KPIs                           │
-│   ┌──────────┐        ┌──────────┐        ┌──────────┐                    │
-│   │ Date     │        │ Total    │        │ Retention│                    │
-│   │ Student  │        │ Sessions │        │ Rate     │                    │
-│   │ Activity │        │ Avg      │        │ Success  │                    │
-│   │ Outcome  │        │ Length   │        │ Rate     │                    │
-│   │ AI Level │        │ Avg Sat  │        │ AI Lift  │                    │
-│   └──────────┘        └──────────┘        └──────────┘                    │
-│                                                                             │
-└─────────────────────────────────────────────────────────────────────────────┘
-```
-
-### Key Measures
-
-| Measure | Aggregation | Description |
-|---------|-------------|-------------|
-| **Total Sessions** | COUNT | Number of sessions |
-| **Avg Session Length** | AVERAGE | Average duration in minutes |
-| **Avg Satisfaction** | AVERAGE | Average satisfaction rating |
-| **Success Rate** | DIVIDE | % of successful sessions |
-| **Retention Rate** | DIVIDE | % of students who return |
-| **AI Adoption Rate** | DIVIDE | % using AI assistance |
-| **AI Lift** | CALCULATE | Improvement with AI |
-
-### Key KPIs
-
-| KPI | Target | Business Meaning |
-|-----|--------|------------------|
-| **Retention Rate** | > 40% | Students returning |
-| **Success Rate** | > 75% | Sessions completed |
-| **Satisfaction Score** | > 4.0 | Average satisfaction |
-| **AI Effectiveness** | > 15% | AI lift in success rate |
 
 ---
 
-## 5. Power BI Overview
+
+
+## 4. Power BI Overview
 
 ### Dashboard Pages
 
